@@ -5,7 +5,7 @@
 }
 
 :root {
-  font-size: 20px;
+  font-size: 1.1rem;
 }
 
 body {
@@ -30,6 +30,7 @@ header > a {
 
 nav li {
   margin-bottom: 10px;
+  opacity: 0.9;
 }
 
 #logo {
@@ -38,11 +39,18 @@ nav li {
   padding: 10px;
 }
 
+#currentNav {
+  background-color: rgb(87, 86, 86);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+}
+
 #currentPage {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 1px 5px rgb(90, 87, 81);
+  box-shadow: 1px 0px 5px rgb(199, 199, 199);
   width: 85%;
   height: 80px;
 }
@@ -51,21 +59,20 @@ nav li {
   display: flex;
 }
 
-.left {
+.container .left {
   width: 15%;
   text-align: center;
 }
 
-.right {
+.container .right {
   display: flex;
   justify-content: center;
   width: 85%;
   line-height: 150%;
 }
 
-#productName,
-#productPrice {
-  font-weight: bold;
+#products {
+  font-size: 0.8rem;
 }
 
 .right h1 {
@@ -87,22 +94,20 @@ footer li {
 a {
   color: black;
   text-decoration: none;
-}
-
-a:hover {
-  transition: 0.2s;
-  opacity: 0.8;
-  text-decoration: underline;
+  transition: 0.5s;
+  opacity: 0.9;
 }
 
 a:active {
   opacity: 0.2;
 }
 
-#currentNav {
-  font-weight: bold;
-  font-size: 1.5rem;
+a:hover {
   text-decoration: underline;
+}
+
+.product-gender {
+  font-size: 1.8rem;
 }
 
 main {
@@ -120,24 +125,20 @@ main .policies {
   padding: 20px;
 }
 
-.policies li {
-  margin-left: 40px;
-}
-
 main div {
   width: 45%; /* Adjust to accommodate the gap */
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
   margin-bottom: 50px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   font-family: Mulish;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px;
 }
 
 main div:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 10px 20px 50px 10px;
   transition: 0.3s;
-  background-color: rgb(209, 209, 209);
-  cursor: pointer;
+  transform: scale(1.05);
 }
 
 main div h3 {
@@ -152,37 +153,77 @@ main img {
 
 footer {
   display: flex;
-  width: 70%;
+  width: 80%;
   margin: auto;
   padding-bottom: 100px;
+  padding-top: 10px;
   justify-content: space-between;
+  font-size: 0.7rem;
 }
 
-footer .left {
-  display: flex;
-  width: 50%;
-  justify-content: space-around;
-}
-
+footer .left,
 footer .right {
-  display: flex;
-  justify-content: space-around;
-  width: 30%;
+  width: 50%;
 }
 
-@media (width <= 767px) {
+footer .left ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+footer .right ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#add-to-cart {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#more-details {
+  font-weight: bold;
+  background-color: white;
+  padding: 5px;
+  border: 0.3px solid rgb(128, 128, 128);
+  border-radius: 2px;
+}
+
+.btn {
+  border: 1px solid;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.btn:active {
+  opacity: 0.6;
+}
+
+@media (width <= 700px) {
   body {
-    width: 100%;
+    width: 90%;
   }
 
   #currentPage {
     width: 80%;
     margin: auto;
     text-align: center;
+    height: 40px;
+    font-size: 20px;
   }
 
   :root {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   main div {
@@ -197,17 +238,26 @@ footer .right {
     text-align: center;
   }
 
-  footer .left {
-    display: block;
+  footer .left ul {
     width: 100%;
-  }
-
-  footer .right {
-    width: 100%;
+    display: flex;
     justify-content: center;
   }
 
+  footer .left {
+    margin: auto;
+  }
+
+  footer .right ul {
+    display: block;
+    justify-content: center;
+  }
+
+  .right {
+    margin: auto;
+  }
+
   footer * {
-    padding: 6px;
+    padding: 2px 5px;
   }
 }
